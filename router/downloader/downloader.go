@@ -17,7 +17,7 @@ import (
 	"emperror.dev/errors"
 	"github.com/google/uuid"
 
-	"github.com/pterodactyl/wings/server"
+	"github.com/titanwings/wings/server"
 )
 
 var client *http.Client
@@ -189,7 +189,7 @@ func (dl *Download) Execute() error {
 		return errors.WrapIf(err, "downloader: failed to create request")
 	}
 
-	req.Header.Set("User-Agent", "Pterodactyl Panel (https://pterodactyl.io)")
+	req.Header.Set("User-Agent", "Titan Wings Panel (https://titanwings.io)")
 	res, err := client.Do(req)
 	if err != nil {
 		return ErrDownloadFailed
